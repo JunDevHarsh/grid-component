@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Karla:wght@400;700&family=Open+Sans&display=swap" rel="stylesheet"> 
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Karla:wght@400;700&family=Open+Sans&display=swap" rel="stylesheet">
+
+  <title>Frontend Mentor | Single Price Grid Component</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+  :root{
+    --bg-color: #e6eff6;
+    --cyan-dark: #2bb3b1;
+    --cyan-light: #4abebd;
+    --greenish: #bfdf32;
+    --text-color: #e3eaed;
+  }
+  *, *::after, *::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+  }
+  body{ position: relative;}
+  .main-container{
+    min-height: 100vh;
+    width: auto;
+    position: relative;
+    padding: calc(100vh - 80vh) 1rem;
+    background-color: var(--bg-color);
+    font-family: 'Karla', sans-serif;
+  }
+  .main-box{
+    max-width: 600px;
+    min-height: 450px;
+    width: 100%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 200px auto;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  .box-1{
+    background-color: #fff;
+    grid-area: 1 / 1 / 2 / 3;
+    padding: 2.5rem;
+  }
+  .title-1{
+    font-size: 1.5rem;
+    color: var(--cyan-dark);
+  }
+  .title-2{
+    font-size: 1.1rem;
+    color: var(--greenish);
+    margin: 1rem 0;
+  }
+  .intro{
+    font-size: 0.95rem;
+    color: #a5a5a5;
+  }
+  .box-2{ 
+    background-color: var(--cyan-dark);
+    padding: 2.5rem;
+    color: #fff;
+  }
+  .sub-title{
+    font-size: 1rem;
+    font-weight: 400;
+  }
+  .price-title{
+    font-size: 1.75rem;
+    margin: 1rem 0;
+    position: relative;
+  }
+  .price-title::after{
+    display: inline;
+    content: 'per month';
+    font-size: 0.9rem;
+    height: 10px;
+    width: auto;
+    position: absolute;
+    top: 8px;
+    left: 70px;
+    opacity: 0.5;
+    font-weight: 400; 
+  }
+  .price-info{
+    font-size: 0.9rem;
+    font-weight: 400;
+    opacity: 0.8;
+  }
+  .sign-up{
+    width: 100%;
+    padding: 0.75rem 1rem;
+    font-size: 0.9rem;
+    font-weight: 700;
+    background-color: var(--greenish);
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    margin-top: 1.8rem;
+    box-shadow: 2px 2px 9px 0px #7e7e7ead;
+    cursor: pointer;
+  }
+  .box-3{
+    background-color: var(--cyan-light);
+    padding: 2.5rem;
+    color: #fff;
+  }
+  .querry-title{
+    font-size: 1rem;
+    font-weight: 400;
+  }
+  .querry-info{
+    font-size: 0.8rem;
+    line-height: 1.5;
+    margin-top: 1rem;
+    opacity: 0.7;
+  }
+  footer{
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    bottom: 0;
+    left: 0;
+  }
+  @media (max-width: 700px){
+    .main-container{ padding: calc(100vh - 90vh) 1rem;}
+    .main-box{ grid-template-rows: auto;}
+    .box-2{grid-area: 2 / 1 / 3 / 3;}
+    .box-3{ grid-area: 3 / 1 / 4 / 3;}
+  }
+  </style>
+</head>
+<body>
+  <main class="main-container">
+    <section class="main-box">
+      <div class="box-1">
+        <h1 class="title-1">Join our community</h1>
+        <h2 class="title-2">30-day, hassle-free money back guarantee</h2>
+        <p class="intro">Gain access to our full library of tutorials along with expert code reviews.<br> 
+          Perfect for any developers who are serious about honing their skills.</p>
+      </div>
+      <div class="box-2">
+        <h1 class="sub-title">Monthly Subscription</h1>
+          <h2 class="price-title">&dollar;29</h2>
+          <p class="price-info">Full access for less than &dollar;1 a day</p>
+          <input type="button" value="Sign Up" class="sign-up" />
+      </div>
+      <div class="box-3">
+        <h1 class="querry-title">Why Us</h1>
+          <p class="querry-info">Tutorials by industry experts<br>
+            Peer &amp; expert code review<br>
+            Coding exercises<br>
+            Access to our GitHub repos<br>
+            Community forum<br>
+            Flashcard decks<br>
+            New videos every week</p>
+      </div>
+    </section> 
+  </main> 
+  <footer>
+    <p class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="#">Harshdeep Singh</a>.
+    </p>
+  </footer>
+</body>
+</html>
